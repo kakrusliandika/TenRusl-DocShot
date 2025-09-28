@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Primary URL list for RUSL DocShot -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://tenrusl-docshot.pages.dev/</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Pages directory -->
+  <url>
+    <loc>https://tenrusl-docshot.pages.dev/pages/</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tenrusl-docshot.pages.dev/pages/privacy.html</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tenrusl-docshot.pages.dev/pages/terms.html</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tenrusl-docshot.pages.dev/pages/contact.html</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tenrusl-docshot.pages.dev/pages/cookies.html</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tenrusl-docshot.pages.dev/pages/head-snippets.html</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tenrusl-docshot.pages.dev/pages/index-injection-example.html</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://tenrusl-docshot.pages.dev/pages/ad-unit-example.html</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

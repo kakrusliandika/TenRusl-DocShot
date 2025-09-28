@@ -1,0 +1,185 @@
+/* Lightweight page styles shared by /pages/*.html
+   - Clean typography
+   - Card + reveal animation
+   - Responsive container
+   - No external dependencies
+*/
+
+:root {
+    --bg: #fbfbfe;
+    --ink: #10131a;
+    --muted: #667085;
+    --line: #e8ecf3;
+    --card: #ffffff;
+    --brand: #755bff;
+    --brand2: #1ad4e8;
+
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(16, 19, 26, 0.06);
+    --container: min(96vw, 1080px);
+}
+
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: var(--ink);
+    background: var(--bg);
+    font: 500 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+    padding: 32px 0 48px;
+}
+.container {
+    width: var(--container);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.breadcrumbs {
+    font-size: 0.925rem;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+.breadcrumbs a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+}
+.breadcrumbs a:hover {
+    color: #111;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px 22px;
+}
+
+.prose h1 {
+    font-size: 1.75rem;
+    margin: 0 0 10px;
+}
+.prose h2 {
+    font-size: 1.25rem;
+    margin: 22px 0 10px;
+}
+.prose p {
+    margin: 10px 0;
+}
+.prose ul {
+    margin: 10px 0 10px 20px;
+}
+.prose li {
+    margin: 6px 0;
+}
+.prose em {
+    color: var(--muted);
+}
+.prose code {
+    background: #f2f4f8;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+.prose pre {
+    overflow: auto;
+    background: #0b1020;
+    color: #e7e9ee;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #11162a;
+}
+.prose pre code {
+    background: transparent;
+    padding: 0;
+}
+.prose a {
+    color: #3b82f6;
+}
+.prose a:hover {
+    text-decoration: underline;
+}
+
+.reveal {
+    opacity: 0.001;
+    translate: 0 10px;
+    transition: opacity 0.36s ease, translate 0.36s ease;
+}
+.reveal.in {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.ad-skeleton {
+    height: 120px;
+    border: 1px dashed var(--line);
+    color: var(--muted);
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #f6f7fb;
+    font-size: 0.95rem;
+}
+
+/* Contact form */
+.contact-form {
+    margin-top: 12px;
+}
+.contact-form .row {
+    display: grid;
+    gap: 6px;
+    margin: 10px 0;
+}
+.contact-form label {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+.contact-form input,
+.contact-form textarea {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 12px;
+    background: #fff;
+    color: #111;
+    font: inherit;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #111827;
+    color: #fff;
+    border: 1px solid #0f172a;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+.btn:hover {
+    filter: brightness(1.05);
+}
+.btn.ghost {
+    background: transparent;
+    color: #111;
+    border-color: var(--line);
+}
+
+/* Small screens */
+@media (max-width: 520px) {
+    .container {
+        padding: 0 12px;
+    }
+    .prose h1 {
+        font-size: 1.55rem;
+    }
+}

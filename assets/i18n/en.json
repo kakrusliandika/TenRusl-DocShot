@@ -1,0 +1,27 @@
+{
+    "app": {
+        "title": "Turn snippets into slides/images",
+        "subtitle": "Paste block → choose preset → adjust padding/gutter → Export PNG/PDF"
+    },
+    "controls": {
+        "preset": "Preset",
+        "padding": "Padding",
+        "gutter": "Gutter",
+        "watermark": "Watermark"
+    },
+    "actions": {
+        "preview": "Preview",
+        "exportPNG": "Export PNG",
+        "exportPDF": "Export PDF",
+        "batch": "Batch PNG",
+        "copy": "Copy Image"
+    },
+    "preview": { "title": "Preview" },
+    "nav": { "support": "Support", "privacy": "Privacy", "terms": "Terms" },
+    "toast": {
+        "rendering": "Rendering...",
+        "done": "Done!",
+        "downloaded": "Downloaded",
+        "copied": "Image copied to clipboard!"
+    }
+}

@@ -1,0 +1,16 @@
+# Canonical clean URLs mapped to static pages (serve as 200 rewrites)
+#/from-path            /to-file                       status
+
+/privacy               /pages/privacy.html            200
+/terms                 /pages/terms.html              200
+/cookies               /pages/cookies.html            200
+/contact               /pages/contact.html            200
+/ads                   /pages/ad-unit-example.html    200
+/head                  /pages/head-snippets.html      200
+/inject                /pages/index-injection-example.html 200
+
+# Convenience redirects
+/index.html            /                               301
+/pages/index.html      /                               301
+/robots                /robots.txt                     301
+/sitemap               /sitemap.xml                    301

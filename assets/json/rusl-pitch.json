@@ -1,0 +1,11 @@
+{
+    "id": "rusl-pitch",
+    "name": "RUSL Pitch 16:9",
+    "width": 1600,
+    "height": 900,
+    "bg": "#0b0e14",
+    "brandColor": "#7c5cff",
+    "padding": 40,
+    "gutter": 24,
+    "watermark": true
+}

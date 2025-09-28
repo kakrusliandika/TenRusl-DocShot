@@ -1,0 +1,27 @@
+{
+    "app": {
+        "title": "Ubah snippet jadi slide/gambar",
+        "subtitle": "Paste blok → pilih preset → atur padding/gutter → Export PNG/PDF"
+    },
+    "controls": {
+        "preset": "Preset",
+        "padding": "Padding",
+        "gutter": "Gutter",
+        "watermark": "Watermark"
+    },
+    "actions": {
+        "preview": "Preview",
+        "exportPNG": "Export PNG",
+        "exportPDF": "Export PDF",
+        "batch": "Batch PNG",
+        "copy": "Copy Image"
+    },
+    "preview": { "title": "Preview" },
+    "nav": { "support": "Bantuan", "privacy": "Privasi", "terms": "Ketentuan" },
+    "toast": {
+        "rendering": "Merender...",
+        "done": "Selesai!",
+        "downloaded": "Diunduh",
+        "copied": "Gambar disalin ke clipboard!"
+    }
+}

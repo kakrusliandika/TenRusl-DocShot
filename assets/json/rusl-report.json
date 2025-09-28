@@ -1,0 +1,11 @@
+{
+    "id": "rusl-report",
+    "name": "RUSL Report A4",
+    "width": 1240,
+    "height": 1754,
+    "bg": "#ffffff",
+    "brandColor": "#7c5cff",
+    "padding": 48,
+    "gutter": 24,
+    "watermark": false
+}

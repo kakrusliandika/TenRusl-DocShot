@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+        <title>TenRusl - DocShot · Turn snippets into slides/images</title>
+        <meta
+            name="description"
+            content="TenRusl - DocShot: super fast, lightweight, secure tool to turn text snippets into clean slides/images. Dark/Light, multi-language, SEO-ready."
+        />
+        <link rel="canonical" href="https://tenrusl-docshot.pages.dev/" />
+        <meta name="theme-color" content="#0b0e14" />
+
+        <!-- PWA & Icons -->
+        <link rel="icon" type="image/png" href="./assets/images/icon.png" />
+        <link rel="apple-touch-icon" href="./assets/images/icon.png" />
+        <link rel="manifest" href="./manifest.webmanifest" />
+
+        <!-- OG -->
+        <meta property="og:title" content="TenRusl - DocShot" />
+        <meta
+            property="og:description"
+            content="Paste → pick preset → adjust padding/gutter → Export PNG/PDF (batch OK)."
+        />
+        <meta property="og:url" content="https://tenrusl-docshot.pages.dev/" />
+        <meta property="og:image" content="https://tenrusl-docshot.pages.dev/assets/images/icon.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <!-- JSON-LD -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "TenRusl - DocShot",
+                "url": "https://tenrusl-docshot.pages.dev/",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Web",
+                "featureList": [
+                    "Export PNG",
+                    "Export PDF",
+                    "Batch mode",
+                    "Dark/Light",
+                    "Multi-language",
+                    "Offline-ready"
+                ]
+            }
+        </script>
+
+        <link rel="stylesheet" href="./assets/css/app.css" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+
+        <header class="topbar container" role="banner">
+            <div class="brand">
+                <img src="./assets/images/icon.png" class="brand-icon" width="24" height="24" alt="" />
+                <span class="brand-name">TenRusl - DocShot</span>
+            </div>
+
+            <nav class="controls" aria-label="Top controls">
+                <!-- Language text buttons: EN | ID -->
+                <div class="lang-links" role="group" aria-label="Language">
+                    <button class="lang-link active" data-lang="en" aria-pressed="true">EN</button>
+                    <span class="sep">|</span>
+                    <button class="lang-link" data-lang="id" aria-pressed="false">ID</button>
+                </div>
+
+                <!-- Theme toggle (dark shows SUN; light shows MOON) -->
+                <button id="themeToggle" class="btn icon" aria-label="Toggle theme" title="Toggle theme">
+                    <svg class="ico"><use href="#ico-sun"></use></svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="main" class="container grid" role="main">
+            <!-- Controls -->
+            <section class="card">
+                <h1 class="title" data-i18n="app.title">Turn snippets into slides/images</h1>
+                <p class="muted" data-i18n="app.subtitle">
+                    Paste → pick preset → adjust padding/gutter → Export PNG/PDF
+                </p>
+
+                <!-- Horizontal toolbar (auto-fit, match parent) -->
+                <div class="toolbar toolbar-inline" role="group" aria-label="Formatting controls">
+                    <!-- Size -->
+                    <div class="group inline">
+                        <span class="label" data-i18n="controls.size">Size</span>
+                        <div class="seg">
+                            <input type="radio" name="size" id="size169" value="1600x900" checked />
+                            <label for="size169">16:9</label>
+                            <input type="radio" name="size" id="sizeA4" value="1240x1754" />
+                            <label for="sizeA4">A4</label>
+                            <input type="radio" name="size" id="sizeCustom" value="custom" />
+                            <label for="sizeCustom">Custom</label>
+                        </div>
+                        <div class="custom-size" id="customSize" hidden>
+                            <input id="customW" type="number" min="64" max="10000" value="1600" aria-label="Width" />
+                            <span class="times">×</span>
+                            <input id="customH" type="number" min="64" max="10000" value="900" aria-label="Height" />
+                        </div>
+                    </div>
+
+                    <!-- Padding -->
+                    <div class="group inline">
+                        <label class="label" for="paddingRange" data-i18n="controls.padding">Padding</label>
+                        <input id="paddingRange" class="rangebar" type="range" min="0" max="256" value="32" />
+                        <input
+                            id="paddingInput"
+                            class="num"
+                            type="number"
+                            min="0"
+                            max="256"
+                            value="32"
+                            inputmode="numeric"
+                            aria-label="Padding value"
+                        />
+                    </div>
+
+                    <!-- Gutter -->
+                    <div class="group inline">
+                        <label class="label" for="gutterRange" data-i18n="controls.gutter">Gutter</label>
+                        <input id="gutterRange" class="rangebar" type="range" min="0" max="128" value="16" />
+                        <input
+                            id="gutterInput"
+                            class="num"
+                            type="number"
+                            min="0"
+                            max="128"
+                            value="16"
+                            inputmode="numeric"
+                            aria-label="Gutter value"
+                        />
+                    </div>
+
+                    <!-- Watermark -->
+                    <div class="group inline">
+                        <span class="label" data-i18n="controls.watermark">Watermark</span>
+                        <label class="switch">
+                            <input id="wmToggle" type="checkbox" aria-label="Enable watermark" />
+                            <span class="slider"></span>
+                        </label>
+                        <input
+                            id="wmText"
+                            class="wmtext"
+                            type="text"
+                            placeholder="© TenRusl - DocShot"
+                            value="© TenRusl - DocShot"
+                            hidden
+                        />
+                    </div>
+                </div>
+
+                <textarea
+                    id="snippet"
+                    rows="10"
+                    spellcheck="false"
+                    placeholder="Paste your snippet here. Use a line with --- to split into multiple slides."
+                ></textarea>
+
+                <!-- Centered actions -->
+                <div class="actions center">
+                    <button id="previewBtn" class="btn primary" aria-label="Preview">
+                        <svg class="ico"><use href="#ico-play"></use></svg>
+                        <span class="btn-text" data-i18n="actions.preview">Preview</span>
+                    </button>
+                    <button id="exportPNGBtn" class="btn" aria-label="Export PNG">
+                        <svg class="ico"><use href="#ico-image"></use></svg>
+                        <span class="btn-text" data-i18n="actions.exportPNG">Export PNG</span>
+                    </button>
+                    <button id="exportPDFBtn" class="btn" aria-label="Export PDF">
+                        <svg class="ico"><use href="#ico-pdf"></use></svg>
+                        <span class="btn-text" data-i18n="actions.exportPDF">Export PDF</span>
+                    </button>
+                    <button id="batchPNGBtn" class="btn" aria-label="Batch PNG">
+                        <svg class="ico"><use href="#ico-stack"></use></svg>
+                        <span class="btn-text" data-i18n="actions.batch">Batch PNG</span>
+                    </button>
+                    <button id="copyBtn" class="btn ghost" aria-label="Copy Image">
+                        <svg class="ico"><use href="#ico-copy"></use></svg>
+                        <span class="btn-text" data-i18n="actions.copy">Copy Image</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Preview -->
+            <section class="card">
+                <h2 class="title" data-i18n="preview.title">Preview</h2>
+                <div id="preview" class="preview" role="img" aria-label="Preview area"></div>
+                <div id="toast" class="toast" aria-live="polite" hidden></div>
+            </section>
+        </main>
+
+        <footer class="container footer" role="contentinfo">
+            <small
+                >© <span id="year"></span> TenRusl DocShot •
+                <a href="https://github.com/" rel="noopener">GitHub</a></small
+            >
+        </footer>
+
+        <!-- SVG sprite -->
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <!-- Real crescent moon with subtle craters -->
+            <symbol id="ico-moon" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M21 13.2A9 9 0 1 1 10.8 3a7.2 7.2 0 0 0 10.2 10.2z" />
+                <circle cx="9.5" cy="7.8" r="0.8" fill="currentColor" opacity=".35" />
+                <circle cx="8.1" cy="11.3" r="0.6" fill="currentColor" opacity=".28" />
+                <circle cx="12.2" cy="9.9" r="0.5" fill="currentColor" opacity=".28" />
+            </symbol>
+            <symbol id="ico-sun" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5" />
+                </g>
+            </symbol>
+            <symbol id="ico-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z" /></symbol>
+            <symbol id="ico-image" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="m3 17 5-5 4 4 5-6 3 4" />
+                </g>
+            </symbol>
+            <symbol id="ico-pdf" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <path d="M14 2v6h6" />
+                </g>
+            </symbol>
+            <symbol id="ico-stack" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2 1 7l11 5 11-5-11-5zM1 12l11 5 11-5M1 17l11 5 11-5" />
+                </g>
+            </symbol>
+            <symbol id="ico-copy" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                </g>
+            </symbol>
+        </svg>
+
+        <script src="./assets/js/app.js" defer></script>
+    </body>
+</html>

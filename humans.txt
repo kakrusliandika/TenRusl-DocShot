@@ -1,0 +1,18 @@
+/* humans.txt — We are people, not just code. */
+
+Team: TenRusl - DocShot
+Site: https://tenrusl-docshot.pages.dev/
+Contact: support@tenrusl.com
+Location: Indonesia (remote-first)
+Last-Updated: 2025-09-28
+
+/* Technology */
+Stack: HTML, CSS, JavaScript (vanilla)
+Hosting: Cloudflare Pages (static)
+Performance: Lightweight, fast, PWA-ready
+Security: Strict headers (CSP, HSTS, COOP), no eval, minimal third-parties
+Accessibility: Keyboard-friendly, focus-visible, color contrast (AA)
+
+/* Thanks */
+Thanks to open web standards and the OSS community.
+Be kind. Build fast. Ship small.

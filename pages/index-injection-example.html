@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Index Injection Example — TenRusl - DocShot</title>
+        <meta name="description" content="Example: how to safely inject small snippets into the home page." />
+        <link rel="stylesheet" href="/assets/css/pages.css" />
+        <meta name="theme-color" content="#ffffff" />
+        <noscript
+            ><style>
+                .reveal {
+                    opacity: 1;
+                    translate: 0;
+                }
+            </style></noscript
+        >
+    </head>
+    <body>
+        <main id="main" class="main">
+            <div class="container">
+                <nav class="breadcrumbs"><a href="/">Home</a> / Index Injection</nav>
+
+                <article class="prose card reveal">
+                    <h1>Index Injection Example</h1>
+                    <p>Injecting small snippets via a safe script block:</p>
+
+                    <pre><code>&lt;script&gt;
+  (function(){
+    const el = document.querySelector('#some-target');
+    if (!el) return;
+    el.insertAdjacentHTML('beforeend', '&lt;div class="notice"&gt;Hello from injection!&lt;/div&gt;');
+  })();
+&lt;/script&gt;</code></pre>
+
+                    <p>Keep injections small and avoid remote <code>eval</code>. Prefer progressive enhancement.</p>
+                </article>
+            </div>
+        </main>
+
+        <script src="/assets/js/pages.js" defer></script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Ad Unit Example — TenRusl - DocShot</title>
+        <meta name="description" content="Example of a Google AdSense ad unit with consent considerations." />
+        <link rel="stylesheet" href="/assets/css/pages.css" />
+        <meta name="theme-color" content="#ffffff" />
+        <noscript
+            ><style>
+                .reveal {
+                    opacity: 1;
+                    translate: 0;
+                }
+            </style></noscript
+        >
+    </head>
+    <body>
+        <main id="main" class="main">
+            <div class="container">
+                <nav class="breadcrumbs"><a href="/">Home</a> / Ad Unit Example</nav>
+
+                <article class="prose card reveal">
+                    <h1>Ad Unit Example</h1>
+                    <p><em>This is a non-live example. Replace placeholders with your own IDs.</em></p>
+
+                    <h2>Consent First</h2>
+                    <p>
+                        Ensure user consent (EEA/UK/CH) via a Google-certified CMP and Consent Mode v2 before loading
+                        ads.
+                    </p>
+
+                    <h2>Sample Markup</h2>
+                    <pre><code>&lt;!-- Load AdSense only after consent --&gt;
+&lt;script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_CLIENT"
+        crossorigin="anonymous"&gt;&lt;/script&gt;
+
+&lt;ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="YOUR_ADSENSE_CLIENT"
+     data-ad-slot="YOUR_SLOT_ID"
+     data-ad-format="auto"
+     data-full-width-responsive="true"&gt;&lt;/ins&gt;
+&lt;script&gt;(adsbygoogle = window.adsbygoogle || []).push({});&lt;/script&gt;</code></pre>
+
+                    <h2>Responsive Container</h2>
+                    <div class="ad-skeleton" aria-hidden="true">Ad Placeholder</div>
+                    <p class="muted">This gray box is a placeholder. Replace with live code after consent.</p>
+                </article>
+            </div>
+        </main>
+
+        <script src="/assets/js/pages.js" defer></script>
+    </body>
+</html>
